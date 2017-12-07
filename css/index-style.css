@@ -1,0 +1,225 @@
+/*
+    Pink: #EE048C
+    White: #F7F7F5
+    Light Grey: #E5E5E5
+    Dark Grey: #373737
+    Navy: #0F1626
+*/
+@import url(https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do|Dancing+Script|Yanone+Kaffeesatz);
+
+body {
+    overflow-x: hidden;
+}
+
+.header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+/*    Banner     */
+#banner {
+    background-image: url(../img/vijay-social-welfare-society-children-studying.jpg);
+    background-size: cover;
+    background-position: 0 0px;
+    height: 98%;
+    width: 100%;
+}
+
+#banner #banner-inner {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.5);
+}
+
+#banner #banner-inner h1 {
+    height: 150px;
+    width: 500px;
+    position: absolute;
+    top: calc(50% - 75px);
+    left: calc(50% - 250px);
+    font-size: 60px;
+    animation: titleEnter 0.5s ease-in-out forwards;
+}
+
+@keyframes titleEnter {
+    0% { left: 100%; }
+    100% { left: calc(50% - 250px); }
+}
+/*    Banner ends     */
+
+/*    About     */
+
+#about {
+    height: auto;
+    width: 100%;
+    padding-bottom: 40px;
+    overflow-x: hidden;
+}
+
+#about #about-header {
+    padding-top: 30px;
+    font-size: 150%;
+}
+
+#about .row {
+    border: 1px solid #E5E5E5;
+    width: 95%;
+    margin: auto;
+    margin-top: 30px;
+    padding-bottom: 30px;
+    position: relative;
+    left: 100%;
+    background-color: #E5E5E5;
+    box-shadow: 2px 2px 2px grey;
+}
+
+#about .row h1 {
+    color: #EE048C;
+}
+
+#about .row .col-lg-6 h2 {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 200%;
+    line-height: 40px;
+    margin-right: 20px;
+}
+
+#about .row .image-wrap {
+    border: 2px solid black;
+    height: 30vw;
+    width: 28vw;
+    overflow: hidden;
+    margin: auto;
+}
+
+#about .row .image-wrap img {
+    height: 100%;
+    width: 100%;
+}
+/*    About ends     */
+
+/*    Philosophy     */
+#philosophy {
+    width: 100%;
+    height: auto;
+}
+
+#philosophy #myCarousel {
+    height: 40vh;
+}
+
+#philosophy #myCarousel h2 {
+    color: #EE048C;
+}
+
+#philosophy #myCarousel h3 {
+    padding: 0px 30px;
+}
+
+#philosophy #myCarousel .carousel-indicators li {
+    border: 2px solid #0F1626;
+}
+/*    Philosophy ends     */
+
+/*    Photos     */
+#photos .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+
+#photos .container .image-wrap {
+    height: 300px;
+    overflow: hidden;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#photos .container .image-wrap img {
+    height: 100%;
+    transform: scale(1);
+    transition: 0.2s;
+}
+
+#photos .container .image-wrap img:hover {
+    transform: scale(1.2);
+}
+
+#photos .row a .well {
+    border: 2px solid #EE048C;
+    transition: 0.3s;
+    font-size: 120%;
+    color: #EE048C;
+    background-color: #E5E5E5;
+    border-radius: 10px;
+}
+
+#photos .row a:hover {
+    text-decoration: none;
+}
+
+#photos .row a .well:hover {
+    background-color: #EE048C;
+    color: #E5E5E5;
+}
+/*    Photos end     */
+
+/*    Work     */
+#work .container {
+    width: 100%;
+    padding: 40px 0px 20px 0px;
+}
+
+#work .container .well {
+    border: 3px solid #EE048C;
+    color: #EE048C;
+    transition: 0.2s ease-in-out;
+    font-size: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#work .container .well:hover {
+    color: #F7F7F5;
+    background-color: #EE048C;
+}
+
+#work .container .row a:hover {
+    text-decoration: none;
+}
+
+#work .container .well span {
+    position: relative;
+    left: 0px;
+    transition: left 0.3s ease-in-out;
+}
+
+#work .container .well:hover span {
+    left: 20px;
+}
+/*    Work ends     */
+
+/*    Media queries     */
+@media only screen and (max-width: 768px) {
+    #about .row {
+        left: 0;
+    }
+    
+    #about .row .image-wrap {
+        height: 450px;
+        width: 400px;
+    }
+    
+    #philosophy #myCarousel {
+        height: 42vh;
+    }
+    
+    .hidden-md-down {
+        display: none;
+    }
+    
+    #photos .container .image-wrap {
+        height: 250px;
+    }
+
+}

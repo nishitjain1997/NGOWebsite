@@ -1,2 +1,2 @@
 # NGOWebsite
-Website for a local NGO
+This is the code for an NGO website I'm working on.
