@@ -1,0 +1,130 @@
+/*
+    Pink: #EE048C
+    White: #F7F7F5
+    Light Grey: #E5E5E5
+    Dark Grey: #373737
+    Navy: #0F1626
+*/
+@import url(https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do|Dancing+Script|Yanone+Kaffeesatz);
+
+#workPage-banner {
+    height: 560px;
+    width: 100%;
+    background-image: url(../img/vijay-social-welfare-society-join.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0 40%;
+}
+
+#workPage-banner .container-fluid {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,.1);
+}
+
+#workPage-content {
+    padding: 0;
+    z-index: 10;
+}
+
+#workPage-content .navy {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#workPage-content .workPage-projects {
+    padding-bottom: 30px;
+}
+
+#workPage-content .workPage-projects h1 {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    animation: glow 500ms ease-in-out;
+}
+
+#workPage-content .workPage-projects h3 {
+    color: #0F1626;
+    font-size: 250%;
+    font-size: 26px;
+}
+
+#workPage-content .workPage-projects h4 {
+    color: #373737;
+    line-height: 40px;
+    font-size: 20px;
+}
+
+#workPage-content #row1>div {
+    min-height: 500px;
+    min-width: 400px;
+}
+
+#workPage-content #row2>div {
+    min-height: 500px;
+    min-width: 400px;
+}
+
+#workPage-content #row3>div {
+    min-height: 500px;
+    min-width: 400px;
+}
+
+#workPage-content #row4>div {
+    min-height: 250px;
+    min-width: 400px;
+}
+
+#workPage-content .row .col-right {
+    margin-left: 20px;
+}
+
+#workPage-content #row5>div {
+    min-height: 670px;
+}
+
+#workPage-content .workPage-projects>div>div {
+    margin-top: 20px;
+    transition: 0.25s;
+    border-top: 2px solid #EE048C;
+    border-bottom: 2px solid #EE048C;
+}
+
+#workPage-content .workPage-projects>div>.clearfix {
+    border: none;
+}
+
+#workPage-content .workPage-projects>div>div:hover {
+    background-color: rgba(0,0,0,.2);
+    transform: translate(-2px,-2px);
+}
+
+#workPage-content .workPage-projects img {
+    background-color: white;
+    height: 300px;
+    width: 400px;
+}
+
+#workPage-content #workPage-break {
+    height: 50px;
+    width: 100%;
+}
+
+#workPage-content #workPage-summer {
+    margin-top: 30px;
+}
+
+#workPage-content #workPage-summer h1 {
+    margin-top: 40px;
+}
+
+@keyframes glow {
+    0% { color: #0F1626; text-shadow: 0px 0px 10px #0F1626; }
+    50% { color: #373737; text-shadow: 0px 0px 20px #0F1626; }
+    100% { color: #0F1626; text-shadow: 0px 0px 10px #0F1626; }
+}
+
+@media only screen and (max-width: 768px) {
+    #workPage-content .row .col-right {
+        margin-left: 0px;
+    }
+}

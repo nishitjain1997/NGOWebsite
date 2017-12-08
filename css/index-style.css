@@ -35,9 +35,10 @@ body {
     width: 500px;
     position: absolute;
     top: calc(50% - 75px);
-    left: calc(50% - 250px);
+    left: 100%;
     font-size: 60px;
     animation: titleEnter 0.5s ease-in-out forwards;
+    animation-delay: 200ms;
 }
 
 @keyframes titleEnter {
@@ -64,8 +65,8 @@ body {
     border: 1px solid #E5E5E5;
     width: 95%;
     margin: auto;
-    margin-top: 30px;
-    padding-bottom: 30px;
+    margin-top: 20px;
+    padding-bottom: 20px;
     position: relative;
     left: 100%;
     background-color: #E5E5E5;
@@ -76,17 +77,17 @@ body {
     color: #EE048C;
 }
 
-#about .row .col-lg-6 h2 {
+#about .row .col-lg-7 h2, #about .row .col-lg-6 h2 {
     font-family: 'Yanone Kaffeesatz';
     font-size: 200%;
-    line-height: 40px;
+    line-height: 35px;
     margin-right: 20px;
 }
 
 #about .row .image-wrap {
     border: 2px solid black;
-    height: 30vw;
-    width: 28vw;
+    height: 25vw;
+    width: 22vw;
     overflow: hidden;
     margin: auto;
 }
@@ -145,20 +146,19 @@ body {
     transform: scale(1.2);
 }
 
-#photos .row a .well {
+#photos .row a {
     border: 2px solid #EE048C;
-    transition: 0.3s;
-    font-size: 120%;
+    display: block;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
     color: #EE048C;
     background-color: #E5E5E5;
-    border-radius: 10px;
+    transition: 0.3s;
 }
 
 #photos .row a:hover {
     text-decoration: none;
-}
-
-#photos .row a .well:hover {
     background-color: #EE048C;
     color: #E5E5E5;
 }
@@ -198,6 +198,55 @@ body {
     left: 20px;
 }
 /*    Work ends     */
+
+/*    Donate     */
+#donate {
+    padding-bottom: 30px;
+}
+
+#donate .quote {
+    padding: 30px 0px;
+}
+
+#donate .quote h1 {
+    width: 90%;
+    margin: auto;
+    font-family: 'Merienda';
+}
+
+#donate .quote h2 {
+    width: 80%;
+    margin: auto;
+    font-size: 160%;
+    font-family: 'Merienda';
+}
+
+#donate #donate-content h1 {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 200%;
+}
+
+#donate .row h2 {
+    font-family: 'Yanone Kaffeesatz';
+    font-size: 150%;
+}
+
+#donate .row h2 li {
+    list-style: none;
+    padding: 10px 10px;
+    transition: 0.3s;
+}
+
+#donate .row h2 li:hover {
+    background-color: rgba(0,0,0,.2);
+}
+/*    Donate ends     */
+
+/*    Footer     */
+footer {
+    height: 50%;
+}
+/*    Footer ends     */
 
 /*    Media queries     */
 @media only screen and (max-width: 768px) {

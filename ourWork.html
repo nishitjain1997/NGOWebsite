@@ -7,10 +7,9 @@
         <meta name="author" content="Nishit Jain"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
-        <title>Home | Vijay Social Welfare Society</title>
+        <title>Our Work | Vijay Social Welfare Society</title>
         <link rel="shortcut icon" href="img/vijay-social-welfare-society-logo.png"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link href="https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do" rel="stylesheet">
           
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
         </script>
@@ -22,7 +21,8 @@
             }
         </script>
         
-        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/work-style.css"/>
     </head>
     <body id="workPage" data-spy="scroll" data-target=".navbar" data-offset="80">
         <!--     Navigation Bar     -->
@@ -45,10 +45,10 @@
                     <ul class="nav navbar-nav navbar-right text-center" id="nav">
                         <li><a href="index.html">HOME</a></li>
                         <li><a href="#workPage" class="slide-section">WHAT WE DO</a></li>
-                        <li><a href="index.html#join">JOIN THE MOVEMENT</a></li>
+                        <li><a href="join.html">JOIN THE MOVEMENT</a></li>
                         <li><a href="index.html#donate">WAYS TO HELP</a></li>
-                        <li><a href="#gallery">GALLERY</a></li>
-                        <li><a href="#contact">CONTACT</a></li>
+                        <li><a href="gallery.html">GALLERY</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
                     </ul>
                 </div>
             </div>
@@ -62,7 +62,7 @@
         </div>
         
         <div class="container-fluid" id="workPage-content">
-            <div class="navy text-center">
+            <div class="navy text-center header white-text">
                 <h1>Our Work</h1>
             </div>
             
@@ -122,12 +122,15 @@
                 <div class="row" id="row4">
                     <div class="col-lg-5 col-lg-offset-4 col-sm-10">
                         <h3><span class="glyphicon glyphicon-expand"></span> Muskan</h3>
+                        <img src="img/vijay-social-welfare-society-muskan.jpeg"/>
                         <h4>
                             Ensuring admissions of underprivileged children in Govt. and Private schools to support govt in 100% literacy mission.
                         </h4>
                     </div>
                 </div>
             </div>
+            
+            <div id="workPage-break" class="navy"></div>
             
             <div class="container-fluid text-center workPage-projects" id="workPage-summer">
                 <h1><span class="glyphicon glyphicon-list-alt"></span> Summer Activities 2K17</h1>
@@ -197,11 +200,34 @@
         <script type="text/javascript">
             $(document).ready(function() {
                 $(document).scroll(function() {
-                    var top = $(window).scrollTop();
-                    var speed = 0.5;
-                    var offset = top * speed;
+                    var screenTop = $(window).scrollTop();
+                    var screenBottom = screenTop + $(window).height();
                     
-                    $("#workPage-banner").css("background-position","0 " + (offset) + "px");
+                    //  For banner
+                    var bannerBottom = $("#workPage-banner").height();
+                    
+                    if(screenTop <= bannerBottom) {
+                        var speed = 0.1;
+                        var offset = 40 - (screenTop * speed);
+
+                        $("#workPage-banner").css("background-position","0 " + (offset) + "%");
+                    }
+                    
+                    $("h1").each(function() {
+                        var elementTop = $(this).offset().top;
+                        var elementBottom = elementTop + $(window).height();
+                        
+                        if(screenBottom > elementTop && screenBottom < elementBottom) {
+                            $(this).css({
+                                'animation-iteration-count':'infinite'
+                            });
+                        }
+                        else {
+                            $(this).css({
+                                'animation-iteration-count':'1'
+                            });
+                        }
+                    });
                 });
                 
                 $(".slide-section").click(function(e){

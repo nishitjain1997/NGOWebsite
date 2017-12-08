@@ -129,6 +129,7 @@ nav.navbar .container .collapse .nav li a {
     height: 70px;
     padding-top: 30px;
     transition: 0.3s;
+    background-color: #F7F7F5;
 }
 
 nav.navbar .container .collapse .nav li a:hover {
