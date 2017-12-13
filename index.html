@@ -43,10 +43,10 @@
                     <ul class="nav navbar-nav navbar-right text-center white" id="nav">
                         <li><a href="#myPage" class="slide-section">HOME</a></li>
                         <li><a href="ourWork.html">WHAT WE DO</a></li>
-                        <li><a href="join.html" class="slide-section">JOIN THE MOVEMENT</a></li>
+                        <li><a href="join.html">JOIN THE MOVEMENT</a></li>
                         <li><a href="#donate" class="slide-section">WAYS TO HELP</a></li>
                         <li><a href="gallery.html">GALLERY</a></li>
-                        <li><a href="about.html" class="slide-section">ABOUT</a></li>
+                        <li><a href="about.html">ABOUT</a></li>
                     </ul>
                 </div>
             </div>
@@ -345,14 +345,14 @@
                             var eleBottom = eleTop + $(this).height();
 
                             if(screenBottom > eleTop && screenBottom < eleBottom) {
-                                var percent = ((screenBottom - eleTop) / $(this).height()) * 100;
-                                percent = 100 - percent;
+                                var percent = ((screenBottom - eleTop) / $(this).height()) * 50;
+                                percent = (50 - percent) * 2;
                                 $(this).css({
                                     'left' : percent + '%'
                                 });
                             }
                             
-                            if(screenTop > eleBottom) {
+                            if(screenTop > (eleTop + $(this).height() / 2)) {
                                 $(this).css({
                                     'left' : '0%'
                                 });

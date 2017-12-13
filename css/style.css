@@ -124,6 +124,10 @@ nav.navbar .container .navbar-header .navbar-brand p {
     font-family: 'Merienda';
 }
 
+nav.navbar .container .collapse .nav li {
+    background-color: #F7F7F5;
+}
+
 nav.navbar .container .collapse .nav li a {
     display: block;
     height: 70px;
@@ -143,11 +147,17 @@ nav.navbar .container .collapse .nav li.active a {
 @media only screen and (max-width: 768px) {
     nav.navbar .container .collapse .nav {
         height: auto;
+        background-color: #F7F7F5;
     }
     
     nav.navbar .container .collapse .nav li a {
         height: auto;
         padding-top: 10px;
+        background-color: #F7F7F5;
     }
 }
 /*    Navbar ends     */
+
+.clear {
+    clear: both;
+}

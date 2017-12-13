@@ -1,0 +1,265 @@
+/*
+    Pink: #EE048C
+    White: #F7F7F5
+    Light Grey: #E5E5E5
+    Dark Grey: #373737
+    Navy: #0F1626
+*/
+@import url(https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do|Dancing+Script|Yanone+Kaffeesatz);
+body {
+    height: 90%;
+    width: 100%;
+    margin-top: 70px;
+}
+
+#joinPage-content {
+    height: 100%;
+}
+
+#joinPage-content #contact-info {
+    height: 90%;
+    width: calc(100% / 3);
+    float: left;
+    color: #373737;
+}
+
+#joinPage-content #contact-info div {
+    height: 100px;
+    width: 100%;
+    margin-top: 10px;
+    padding: 20px;
+    padding-left: 40px;
+    transition: 0.3s;
+}
+
+#joinPage-content #contact-info div:hover {
+    background-color: #E5E5E5;
+}
+
+#joinPage-content #contact-info div span {
+    height: 100%;
+    float: left;
+    font-size: 28px;
+    position: relative;
+    top: 5px;
+}
+
+#joinPage-content #contact-info div p {
+    width: 80%;
+    float: left;
+    font-size: 1.8vw;
+    line-height: 25px;
+    margin-left: 20px;
+}
+
+#joinPage-content #contact-form::before {
+    content: '';
+    height: 30px;
+    width: 30px;
+    background-color: #EE048C;
+    position: absolute;
+    top: 50px;
+    left: 0px;
+    transform: rotate(0deg);
+    transition: all 0.3s;
+}
+
+#joinPage-content #contact-form {
+    border-left: 1px solid #0F1626;
+    height: auto;
+    min-height: 100%;
+    width: calc(2 * (100% / 3));
+    float: left;
+    padding: 0px 10px 40px 0px;
+    background-color: #EE048C;
+    position: relative;
+    font-size: 120%;
+}
+
+#joinPage-content #contact-form:hover::before {
+    border-left: 1px solid #0F1626;
+    border-top: 1px solid #0F1626;
+    transform: rotate(-45deg);
+    left: -15px;
+}
+
+/*    For text inputs     */
+
+#joinPage-content #contact-form .row .col-lg-6 .text {
+    height: 40px;
+    width: 80%;
+    margin: auto;
+    position: relative;
+    margin-top: 10px;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .text input {
+    border: 2px solid #0F1626;
+    height: 100%;
+    width: 90%;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .text:hover input {
+    border: 2px solid #F7F7F5;
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .text:hover p {
+    border-right: 2px solid #F7F7F5;
+    color: #F7F7F5;
+} 
+
+#joinPage-content #contact-form .row .col-lg-6 .text input:focus {
+    outline: none;
+    border: 2px solid #F7F7F5;
+    width: 100%;
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .text input:focus + p {
+    border-right: 2px solid #F7F7F5;
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .text p {
+    border-right: 2px solid #0F1626;
+    height: 38px;
+    width: auto;
+    padding: 8px;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    transition: 0.3s;
+    color: #0F1626;
+}
+/*    Text inputs end     */
+
+/*    For radio input     */
+#joinPage-content #contact-form .row .col-lg-6 .radio {
+    width: 80%;
+    margin: auto;
+    margin-top: 15px;
+    color: #0F1626;
+    transition: 0.3s;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .radio:hover {
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .radio .radio-button {
+    width: 25%;
+    float: left;
+    margin-left: 25px;
+}
+/*    Radio inputs end     */
+
+/*    Message     */
+#joinPage-content #contact-form .row .col-lg-6 .message {
+    width: 80%;
+    margin: auto;
+    position: relative;
+    color: #0F1626;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .message textarea {
+    background-color: transparent;
+    border: 2px solid #0F1626;
+    width: 90%;
+    transition: 0.3s;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .message:hover {
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .message:hover textarea {
+    border: 2px solid #F7F7F5;
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .message textarea:focus {
+    outline: none;
+    border: 2px solid #F7F7F5;
+    width: 100%;
+    color: #F7F7F5;
+}
+
+#joinPage-content #contact-form .row .col-lg-6 .message textarea:focus + p {
+    color: #F7F7F5;
+}
+/*    Message Ends     */
+
+/*    Submit button     */
+#submit {
+    border: 2px solid #0F1626;
+    height: 50px;
+    width: 100px;
+    position: relative;
+    top: 20px;
+    left: calc(50% - 50px);
+    background-color: transparent;
+    color: #0F1626;
+    font-size: 120%;
+    transition: 0.3s;
+}
+
+#submit:hover {
+    border: 2px solid #F7F7F5;
+    color: #F7F7F5;
+}
+/*    Button ends     */
+
+#success {
+    display: none;
+    margin-top: 30%;
+}
+
+#honeypot {
+    display: none;
+}
+
+.clear {
+    clear: both;
+}
+
+@media only screen and (max-width: 768px) {
+    #joinPage-content #contact-form:hover::before {
+        transform: rotate(0deg);
+        border: none;
+        left: 0px;
+    }
+    #joinPage-content #contact-info {
+        padding: 20px 0px 40px 0px;
+        float: none;
+        width: 100%;
+        height: auto;
+    }
+    
+    #joinPage-content #contact-info div {
+        width: 60%;
+        margin: auto;
+    }
+
+    #joinPage-content #contact-info div p {
+        font-size: 120%;
+    }
+
+    #joinPage-content #contact-info div span {
+        font-size: 32px;
+    }
+    
+    #joinPage-content #contact-form {
+        float: none;
+        width: 100%;
+        padding: 20px 0px 40px 0px;
+    }
+    
+    #joinPage-content #contact-form .row .col-lg-6 .message textarea {
+        height: 150px;
+    }
+}
