@@ -14,117 +14,72 @@ body {
 
 #joinPage-content {
     height: 100%;
-}
-
-#joinPage-content #contact-info {
-    height: 90%;
-    width: calc(100% / 3);
-    float: left;
-    color: #373737;
-}
-
-#joinPage-content #contact-info div {
-    height: 100px;
     width: 100%;
-    margin-top: 10px;
-    padding: 20px;
-    padding-left: 40px;
-    transition: 0.3s;
-}
-
-#joinPage-content #contact-info div:hover {
-    background-color: #E5E5E5;
-}
-
-#joinPage-content #contact-info div span {
-    height: 100%;
-    float: left;
-    font-size: 28px;
-    position: relative;
-    top: 5px;
-}
-
-#joinPage-content #contact-info div p {
-    width: 80%;
-    float: left;
-    font-size: 1.8vw;
-    line-height: 25px;
-    margin-left: 20px;
-}
-
-#joinPage-content #contact-form::before {
-    content: '';
-    height: 30px;
-    width: 30px;
     background-color: #EE048C;
-    position: absolute;
-    top: 50px;
-    left: 0px;
-    transform: rotate(0deg);
-    transition: all 0.3s;
 }
 
 #joinPage-content #contact-form {
-    border-left: 1px solid #0F1626;
+    margin: auto;
     height: auto;
     min-height: 100%;
-    width: calc(2 * (100% / 3));
-    float: left;
-    padding: 0px 10px 40px 0px;
-    background-color: #EE048C;
+    width: 80%;
+    padding: 2px 10px 40px 0px;
+    background-color: #F7F7F5;
     position: relative;
     font-size: 120%;
 }
 
-#joinPage-content #contact-form:hover::before {
-    border-left: 1px solid #0F1626;
-    border-top: 1px solid #0F1626;
-    transform: rotate(-45deg);
-    left: -15px;
-}
-
 /*    For text inputs     */
 
-#joinPage-content #contact-form .row .col-lg-6 .text {
-    height: 40px;
-    width: 80%;
-    margin: auto;
-    position: relative;
-    margin-top: 10px;
+#joinPage-content #contact-form .row .col {
+    width: 50%;
+    float: left;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .text input {
-    border: 2px solid #0F1626;
+#joinPage-content #contact-form .row .col .text {
+    height: 40px;
+    width: 65%;
+    position: relative;
+    margin-top: 10px;
+    margin-left: 10%;
+}
+
+#joinPage-content #contact-form .row .col:nth-child(1) .text {
+    margin-left: 40%;
+}
+
+#joinPage-content #contact-form .row .col .text input {
+    border: 2px solid #373737;
     height: 100%;
-    width: 90%;
+    width: 80%;
     background-color: transparent;
     transition: 0.3s;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .text:hover input {
-    border: 2px solid #F7F7F5;
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .text:hover input {
+    border: 2px solid #EE048C;
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .text:hover p {
-    border-right: 2px solid #F7F7F5;
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .text:hover p {
+    border-right: 2px solid #EE048C;
+    color: #EE048C;
 } 
 
-#joinPage-content #contact-form .row .col-lg-6 .text input:focus {
+#joinPage-content #contact-form .row .col .text input:focus {
     outline: none;
-    border: 2px solid #F7F7F5;
-    width: 100%;
-    color: #F7F7F5;
+    border: 2px solid #EE048C;
+    width: 90%;
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .text input:focus + p {
-    border-right: 2px solid #F7F7F5;
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .text input:focus + p {
+    border-right: 2px solid #EE048C;
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .text p {
-    border-right: 2px solid #0F1626;
+#joinPage-content #contact-form .row .col .text p {
+    border-right: 2px solid #373737;
     height: 38px;
     width: auto;
     padding: 8px;
@@ -137,19 +92,23 @@ body {
 /*    Text inputs end     */
 
 /*    For radio input     */
-#joinPage-content #contact-form .row .col-lg-6 .radio {
-    width: 80%;
-    margin: auto;
+#joinPage-content #contact-form .row .col .radio {
+    width: 60%;
     margin-top: 15px;
+    margin-left: 10%;
     color: #0F1626;
     transition: 0.3s;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .radio:hover {
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col:nth-child(1) .radio {
+    margin-left: 40%;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .radio .radio-button {
+#joinPage-content #contact-form .row .col .radio:hover {
+    color: #EE048C;
+}
+
+#joinPage-content #contact-form .row .col .radio .radio-button {
     width: 25%;
     float: left;
     margin-left: 25px;
@@ -157,46 +116,50 @@ body {
 /*    Radio inputs end     */
 
 /*    Message     */
-#joinPage-content #contact-form .row .col-lg-6 .message {
-    width: 80%;
-    margin: auto;
+#joinPage-content #contact-form .row .col .message {
+    width: 65%;
     position: relative;
     color: #0F1626;
     margin-top: 20px;
+    margin-left: 10%;
     transition: 0.3s;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .message textarea {
+#joinPage-content #contact-form .row .col:nth-child(1) .message {
+    margin-left: 40%;
+}
+
+#joinPage-content #contact-form .row .col .message textarea {
     background-color: transparent;
-    border: 2px solid #0F1626;
-    width: 90%;
+    border: 2px solid #373737;
+    width: 80%;
     transition: 0.3s;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .message:hover {
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .message:hover {
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .message:hover textarea {
-    border: 2px solid #F7F7F5;
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .message:hover textarea {
+    border: 2px solid #EE048C;
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .message textarea:focus {
+#joinPage-content #contact-form .row .col .message textarea:focus {
     outline: none;
-    border: 2px solid #F7F7F5;
-    width: 100%;
-    color: #F7F7F5;
+    border: 2px solid #EE048C;
+    width: 90%;
+    color: #EE048C;
 }
 
-#joinPage-content #contact-form .row .col-lg-6 .message textarea:focus + p {
-    color: #F7F7F5;
+#joinPage-content #contact-form .row .col .message textarea:focus + p {
+    color: #EE048C;
 }
 /*    Message Ends     */
 
 /*    Submit button     */
 #submit {
-    border: 2px solid #0F1626;
+    border: 2px solid #373737;
     height: 50px;
     width: 100px;
     position: relative;
@@ -209,8 +172,8 @@ body {
 }
 
 #submit:hover {
-    border: 2px solid #F7F7F5;
-    color: #F7F7F5;
+    border: 2px solid #EE048C;
+    color: #EE048C;
 }
 /*    Button ends     */
 
@@ -228,38 +191,45 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-    #joinPage-content #contact-form:hover::before {
-        transform: rotate(0deg);
-        border: none;
-        left: 0px;
-    }
-    #joinPage-content #contact-info {
-        padding: 20px 0px 40px 0px;
-        float: none;
-        width: 100%;
+    body {
         height: auto;
     }
-    
-    #joinPage-content #contact-info div {
-        width: 60%;
-        margin: auto;
-    }
-
-    #joinPage-content #contact-info div p {
-        font-size: 120%;
-    }
-
-    #joinPage-content #contact-info div span {
-        font-size: 32px;
-    }
-    
     #joinPage-content #contact-form {
         float: none;
-        width: 100%;
+        width: 90%;
         padding: 20px 0px 40px 0px;
     }
     
-    #joinPage-content #contact-form .row .col-lg-6 .message textarea {
-        height: 150px;
+    #joinPage-content #contact-form .row .col {
+        width: 100%;
+        float: none;
+    }
+
+    #joinPage-content #contact-form .row .col .text {
+        width: 90%;
+    }
+
+    #joinPage-content #contact-form .row .col:nth-child(1) .text {
+        margin-left: 10%;
+    }
+    
+    #joinPage-content #contact-form .row .col .radio {
+        width: 90%;
+    }
+    
+    #joinPage-content #contact-form .row .col:nth-child(1) .radio {
+        margin-left: 10%;
+    }
+
+    #joinPage-content #contact-form .row .col .message {
+        width: 90%;
+    }
+
+    #joinPage-content #contact-form .row .col:nth-child(1) .message {
+        margin-left: 10%;
+    }
+    
+    #joinPage-content #contact-form .row .col .message textarea {
+        height: 120px;
     }
 }

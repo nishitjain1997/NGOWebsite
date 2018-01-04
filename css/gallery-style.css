@@ -8,24 +8,22 @@
 @import url(https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do|Dancing+Script|Yanone+Kaffeesatz);
 
 #galleryPage {
-    padding-top: 72px;
+    padding-top: 75px;
 }
 
 #galleryPage-images {
     height: auto;
     width: 100%;
-    margin-top: 20px;
+    padding-top: 20px;
     padding-bottom: 20px;
 }
 
 #galleryPage-images .image-container {
-    height: 500px;
     width: 95%;
     margin: auto;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
     padding-bottom: 20px;
     border-radius: 20px;
-    overflow: hidden;
     position: relative;
 }
 
@@ -39,7 +37,7 @@
 }
 
 #galleryPage-images .image-wrap {
-    height: 300px;
+    height: 250px;
     width: auto;
     margin: 10px 10px 0px 10px;
     float: left;

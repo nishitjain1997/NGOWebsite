@@ -17,7 +17,7 @@ body {
 }
 /*    Banner     */
 #banner {
-    background-image: url(../img/vijay-social-welfare-society-children-studying.jpg);
+    background-image: url(../img/website/vijay-social-welfare-society-children-studying.jpg);
     background-size: cover;
     background-position: 0 0px;
     height: 98%;
@@ -50,10 +50,9 @@ body {
 /*    About     */
 
 #about {
-    height: auto;
     width: 100%;
     padding-bottom: 40px;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 #about #about-header {
@@ -63,14 +62,21 @@ body {
 
 #about .row {
     border: 1px solid #E5E5E5;
-    width: 95%;
+    width: 80%;
     margin: auto;
     margin-top: 20px;
     padding-bottom: 20px;
     position: relative;
-    left: 100%;
+    left: 200px;
+    opacity: 0;
     background-color: #E5E5E5;
     box-shadow: 2px 2px 2px grey;
+    transition: 0.2s linear;
+}
+
+#about .row.bringLeft {
+    left: 0px;
+    opacity: 1;
 }
 
 #about .row h1 {
@@ -114,6 +120,8 @@ body {
 
 #philosophy #myCarousel h3 {
     padding: 0px 30px;
+    width: 80%;
+    margin: auto;
 }
 
 #philosophy #myCarousel .carousel-indicators li {
@@ -127,10 +135,11 @@ body {
     flex-wrap: wrap;
     padding-top: 30px;
     padding-bottom: 30px;
+    width: 85%;
 }
 
 #photos .container .image-wrap {
-    height: 300px;
+    height: 270px;
     overflow: hidden;
     margin-top: 10px;
     margin-left: 10px;
@@ -209,7 +218,7 @@ body {
 }
 
 #donate .quote h1 {
-    width: 90%;
+    width: 80%;
     margin: auto;
     font-family: 'Merienda';
 }

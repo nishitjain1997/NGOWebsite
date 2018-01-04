@@ -35,7 +35,7 @@
                     </button>
 
                     <a class="navbar-brand" id="navbar-brand" href="#myPage">
-                        <img class="img img-circle" src="img/vijay-social-welfare-society-logo.png"/>
+                        <img class="img img-circle" src="img/website/vijay-social-welfare-society-logo.png"/>
                         <p class="pink-text">VSWS</p>
                     </a>
                 </div>
@@ -79,21 +79,21 @@
                 </div>
                 <div class="col-lg-3 col-sm-10">
                     <div class="image-wrap">
-                        <img src="img/vijay-social-welfare-society-connecting-local-communities.jpg" alt="Vijay Social Welfare Society Team"/>
+                        <img src="img/website/vijay-social-welfare-society-connecting-local-communities.jpg" alt="Vijay Social Welfare Society Team"/>
                     </div>
                 </div>
             </div>
             
             <div class="row grey" id="vision">
                 <h1 class="text-center">Vision</h1>
-                <div class="col-lg-offset-1 col-lg-6 col-sm-offset-1 col-sm-9">
+                <div class="col-lg-7 col-sm-offset-1 col-sm-9">
                     <h2>
                         At VSWS, we are committed to our vision to help create better environment in terms of ecology as well as health, happiness and creative womanhood, childhood and youth.
                     </h2>
                 </div>
-                <div class="col-lg-4 col-sm-offset-1 col-sm-10">
+                <div class="col-lg-3 col-sm-10">
                     <div class="image-wrap">
-                        <img src="img/vijay-social-welfare-society-plantation-drive-mandsaur-peepal.jpg" alt="Peepal Plantation Drive, Mandasaur"/>
+                        <img src="img/website/vijay-social-welfare-society-plantation-drive-mandsaur-peepal.jpg" alt="Peepal Plantation Drive, Mandasaur"/>
                     </div>
                 </div>
             </div>
@@ -107,7 +107,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-10">
                     <div class="image-wrap">
-                        <img src="img/vijay-social-welfare-society-children-laughing.jpeg" alt="Laughing Children"/>
+                        <img src="img/website/vijay-social-welfare-society-children-laughing.jpeg" alt="Laughing Children"/>
                     </div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                 </div>
                 <div class="col-lg-3 col-sm-10">
                     <div class="image-wrap">
-                        <img src="img/vijay-welfare-society-children.jpeg" alt="Children"/>
+                        <img src="img/website/vijay-welfare-society-children.jpeg" alt="Children"/>
                     </div>
                 </div>
             </div>
@@ -193,28 +193,28 @@
             </div>
             <div class="container">
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-children-studying-2.jpg" alt="Children Studying"/>
+                    <img src="img/website/vijay-social-welfare-society-children-studying-2.jpg" alt="Children Studying"/>
                 </div>
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-plantation-drive-8.jpg" alt="Plantation Drive"/>
+                    <img src="img/website/vijay-social-welfare-society-plantation-drive-8.jpg" alt="Plantation Drive"/>
                 </div>
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-career-guidance-seminar-banner-highway.jpeg" alt="Career Guidance Seminar"/>
+                    <img src="img/website/vijay-social-welfare-society-career-guidance-seminar-banner-highway.jpeg" alt="Career Guidance Seminar"/>
                 </div>
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-newspaper-clipping.jpg" alt="Newspaper Clipping"/>
+                    <img src="img/website/vijay-social-welfare-society-newspaper-clipping.jpg" alt="Newspaper Clipping"/>
                 </div>
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-children-playing.jpg" alt="Children Playing"/>
+                    <img src="img/website/vijay-social-welfare-society-children-playing.jpg" alt="Children Playing"/>
                 </div>
                 <div class="image-wrap">
-                    <img src="img/vijay-social-welfare-society-children.jpg" alt="Children"/>
+                    <img src="img/website/vijay-social-welfare-society-children.jpg" alt="Children"/>
                 </div>
                 <div class="image-wrap hidden-md-down">
-                    <img src="img/vijay-social-welfare-society-plantation-drive-10.jpg" alt="Plantation Drive"/>
+                    <img src="img/website/vijay-social-welfare-society-plantation-drive-10.jpg" alt="Plantation Drive"/>
                 </div>
                 <div class="image-wrap hidden-md-down">
-                    <img src="img/vijay-social-welfare-society-blankets.jpg" alt="Blankets"/>
+                    <img src="img/website/vijay-social-welfare-society-blankets.jpg" alt="Blankets"/>
                 </div>
             </div>
             <div class="row">
@@ -336,30 +336,18 @@
                         $(".parallax").css("background-position","0 " + offset + "px");
                     }
                     
-                    //  For big screens only
-                    if($(window).width() > 768) {
+                    $("#about .row").each(function() {
+                        var eleTop = $(this).offset().top;
+                        var trigger = eleTop + (0.66 * $(this).height());
                         
-                        // For about boxes
-                        $("#about .row").each(function() {
-                            var eleTop = $(this).offset().top;
-                            var eleBottom = eleTop + $(this).height();
-
-                            if(screenBottom > eleTop && screenBottom < eleBottom) {
-                                var percent = ((screenBottom - eleTop) / $(this).height()) * 50;
-                                percent = (50 - percent) * 2;
-                                $(this).css({
-                                    'left' : percent + '%'
-                                });
-                            }
-                            
-                            if(screenTop > (eleTop + $(this).height() / 2)) {
-                                $(this).css({
-                                    'left' : '0%'
-                                });
-                            }
-                        });
-                    }
-                })
+                        if(screenBottom > trigger) {
+                            $(this).addClass('bringLeft');
+                        }
+                        else {
+                            $(this).removeClass('bringLeft');
+                        }
+                    });
+                });
                 
                 $("#myCarousel").carousel({
                     interval : 2000,

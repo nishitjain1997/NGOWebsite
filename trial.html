@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Trial.html</title>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script>
+            var text;
+            $.get('trial.txt', function(data) {
+                text = data;
+            });
+            
+            $(document).ready(function() {
+                $('#output').append(text);
+            })
+        </script>
+    </head>
+    <body>
+        <div id="output"></div>
+    </body>
+</html>

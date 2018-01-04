@@ -1,2 +1,0 @@
-1. Disappearing navbar
-2. Elements appear on view

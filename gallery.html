@@ -13,7 +13,7 @@
         <link href="https://fonts.googleapis.com/css?family=Merienda|Nothing+You+Could+Do" rel="stylesheet">
         <link rel="stylesheet" type="text/css" href="lightbox.css"/>
           
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js">
+        <script type="text/javascript" src="js/jquery.js">
         </script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
         </script>
@@ -30,15 +30,16 @@
                 'resizeDuration':100,
                 'wrapAround':true,
                 'disableScrolling':true
-            })
+            });
         </script>
         
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
         <link rel="stylesheet" type="text/css" href="css/gallery-style.css"/>
     </head>
     <body id="galleryPage" data-spy="scroll" data-target=".navbar" data-offset="80">
-        <!--     Navigation Bar   -->  
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <!--     Navigation Bar     -->
+        
+        <nav class="navbar navbar-default navbar-fixed-top white">
             <div class="container">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle " data-toggle="collapse" data-target="#myNavbar" onclick="animateBars(this)">
@@ -48,7 +49,7 @@
                     </button>
 
                     <a class="navbar-brand" id="navbar-brand" href="#myPage">
-                        <img class="img img-circle" src="img/vijay-social-welfare-society-logo.png"/>
+                        <img class="img img-circle" src="img/website/vijay-social-welfare-society-logo.png"/>
                         <p class="pink-text">VSWS</p>
                     </a>
                 </div>
@@ -58,7 +59,7 @@
                         <li><a href="ourWork.html">WHAT WE DO</a></li>
                         <li><a href="join.html">JOIN THE MOVEMENT</a></li>
                         <li><a href="index.html#donate">WAYS TO HELP</a></li>
-                        <li class="active"><a href="#galleryPage" class="slide-section">GALLERY</a></li>
+                        <li><a href="#galleryPage" class="slide-section">GALLERY</a></li>
                         <li><a href="about.html">ABOUT</a></li>
                     </ul>
                 </div>
@@ -72,32 +73,9 @@
         <div class="container-fluid" id="galleryPage-images">
             <div class="image-container">
                 <div class="header">
-                    <h1>Trial</h1>
+                    <h1>Career Counselling Seminar</h1>
                 </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-blankets.jpg" data-lightbox="gallery1">
-                       <img src="img/vijay-social-welfare-society-blankets.jpg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-bal-sanskar-shivir.jpg" data-lightbox="gallery1">
-                       <img src="img/vijay-social-welfare-society-bal-sanskar-shivir.jpg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery1">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery1">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery1">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
+                <div id="images">
                 </div>
                 <div class="clear"></div>
                 <div class="button">
@@ -107,31 +85,6 @@
             <div class="image-container">
                 <div class="header">
                     <h1>Trial</h1>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-blankets.jpg" data-lightbox="gallery2">
-                       <img src="img/vijay-social-welfare-society-blankets.jpg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-bal-sanskar-shivir.jpg" data-lightbox="gallery2">
-                       <img src="img/vijay-social-welfare-society-bal-sanskar-shivir.jpg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery2">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery2">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
-                </div>
-                <div class="image-wrap">
-                    <a href="img/vijay-social-welfare-society-children-laughing.jpeg" data-lightbox="gallery2">
-                       <img src="img/vijay-social-welfare-society-children-laughing.jpeg"/>
-                    </a>
                 </div>
                 <div class="clear"></div>
                 <div class="button">
@@ -145,33 +98,22 @@
         </footer>
         
         <script type="text/javascript">
+            
+            var urls;
+            
+            $.get('counselling.txt',function(data) {
+                urls = data.split('\n');
+            });
+            
             $(document).ready(function() {
+                urls.forEach(function(ele) {
+                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='gallery1'><img src='img/counselling/" + ele + "'/></a></div>";
+                    $("#images").append(url);
+                });
+                
                 $(document).scroll(function() {
                     
                 });
-                
-                $(".image-container").each(function() {
-                    var children = $(this).children(".image-wrap").length;
-                    var width = $(window).width();
-                    
-                    if((width > 768 && children > 3) || (width <= 768 && children > 1)) {
-                        $(this).children(".button").css({
-                            'display':'block'
-                        });
-                    }
-                });
-                
-                $(".extension").click(function() {
-                    var index = $(this).index(".extension");
-                    
-                    $("#galleryPage-images .image-container").eq(index).css({
-                        'height':'auto'
-                    });
-                    
-                    $(".button").eq(index).css({
-                        'display':'none'
-                    });
-                })
                 
                 $(".slide-section").click(function(e){
                     e.preventDefault();
