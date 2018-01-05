@@ -28,7 +28,7 @@
                 'fadeDuration':200,
                 'imageFadeDuration':200,
                 'resizeDuration':100,
-                'wrapAround':true,
+                'wrapAround':false,
                 'disableScrolling':true
             });
         </script>
@@ -71,21 +71,24 @@
         <h1 class="text-center pink-text">Memories</h1>
 
         <div class="container-fluid" id="galleryPage-images">
+           
             <div class="image-container">
                 <div class="header">
                     <h1>Career Counselling Seminar</h1>
                 </div>
-                <div id="images">
+                <div id="counselling-images">
                 </div>
                 <div class="clear"></div>
                 <div class="button">
                     <button type="button" class="extension">View More</button>
                 </div>
             </div>
+            
             <div class="image-container">
                 <div class="header">
-                    <h1>Trial</h1>
+                    <h1>Donation Drive</h1>
                 </div>
+                <div id="donation-images"></div>
                 <div class="clear"></div>
                 <div class="button">
                     <button type="button" class="extension">View More</button>
@@ -99,21 +102,27 @@
         
         <script type="text/javascript">
             
-            var urls;
+            var counsellingUrls;
+            var donationUrls;
             
             $.get('counselling.txt',function(data) {
-                urls = data.split('\n');
+                counsellingUrls = data.split('\n');
             });
             
+            $.get('donation.txt',function(data) {
+                donationUrls = data.split('\n');
+            })
+            
             $(document).ready(function() {
-                urls.forEach(function(ele) {
-                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='gallery1'><img src='img/counselling/" + ele + "'/></a></div>";
-                    $("#images").append(url);
+                counsellingUrls.forEach(function(ele) {
+                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='Counselling'><div class='image-overlay'></div><img data-src='img/counselling/" + ele + "'/></a></div>";
+                    $("#counselling-images").append(url);
                 });
                 
-                $(document).scroll(function() {
-                    
-                });
+                donationUrls.forEach(function(ele) {
+                    var url = "<div class='image-wrap'><a href='img/donation/" + ele + "' data-lightbox='Donation'><div class='image-overlay'></div><img data-src='img/donation/" + ele + "'/></a></div>";
+                    $("#donation-images").append(url);
+                })
                 
                 $(".slide-section").click(function(e){
                     e.preventDefault();
@@ -122,7 +131,11 @@
                         scrollTop: ($(linkHref).offset().top - 80)
                     },1000);
                 });
+                
+                
+                $()
             })
         </script>
+        <script type="text/javascript" src="js/jquery.lazyloadxt.js"></script>
     </body>
 </html>
