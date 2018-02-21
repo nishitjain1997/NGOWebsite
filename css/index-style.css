@@ -83,7 +83,7 @@ body {
     color: #EE048C;
 }
 
-#about .row .col-lg-7 h2, #about .row .col-lg-6 h2 {
+#about .row .col-lg-7 h2 {
     font-family: 'Yanone Kaffeesatz';
     font-size: 200%;
     line-height: 35px;
@@ -93,7 +93,7 @@ body {
 #about .row .image-wrap {
     border: 2px solid black;
     height: 25vw;
-    width: 22vw;
+    width: 23vw;
     overflow: hidden;
     margin: auto;
 }
@@ -111,7 +111,8 @@ body {
 }
 
 #philosophy #myCarousel {
-    height: 40vh;
+    height: auto;
+    padding-bottom: 70px;
 }
 
 #philosophy #myCarousel h2 {
@@ -259,25 +260,58 @@ footer {
 
 /*    Media queries     */
 @media only screen and (max-width: 768px) {
-    #about .row {
-        left: 0;
-    }
-    
-    #about .row .image-wrap {
-        height: 450px;
-        width: 400px;
-    }
-    
-    #philosophy #myCarousel {
-        height: 42vh;
-    }
-    
-    .hidden-md-down {
-        display: none;
-    }
-    
-    #photos .container .image-wrap {
-        height: 250px;
+    #banner #banner-inner h1 {
+        font-size: 40px;
     }
 
+    #about .row {
+        width: 100%;
+    }
+
+    #about .row .col-lg-7 h2 {
+        font-size: 150%;
+        line-height: 30px;
+        margin-right: 20px;
+    }
+
+    #about .row .image-wrap {
+        height: 70vw;
+        width: 70vw;
+    }
+
+    #philosophy #myCarousel h3 {
+        font-size: 120%;
+    }
+
+    #photos .container .image-wrap {
+        height: auto;
+        width: 100%;
+    }
+
+    #photos .container .image-wrap img {
+        height: auto;
+        width: 100%;
+    }
+
+    #photos .row a {
+        height: 70px;
+        width: 140px;
+    }
+
+    #work .container .well {
+        font-size: 110%;
+    }
+    
+    #donate .row {
+        padding: 0px 10px 0px 20px;
+    }
+    
+    #donate .quote h1, #donate .quote h2 {
+        font-size: 140%;
+    }
+    
+    #donate #donate-content h1 {
+        padding: 0px 10px;
+        font-size: 190%;
+    }
 }

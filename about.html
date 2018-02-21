@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
@@ -7,7 +7,7 @@
         <meta name="author" content="Nishit Jain"/>
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         
-        <title>Home | Vijay Social Welfare Society</title>
+        <title>Info | Vijay Social Welfare Society</title>
         <link rel="shortcut icon" href="img/vijay-social-welfare-society-logo.png"/>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
           
@@ -17,10 +17,62 @@
             function animateBars(x) {
                 x.classList.toggle("change");
             }
+            
+            function addMap() {
+                var mapCenter = new google.maps.LatLng(22.74,75.88);
+                var canvas = document.getElementById("location");
+                var mapOptions = {
+                    center: mapCenter,
+                    zoom: 13,
+                    disableDefaultUI: true,
+                };
+                var map = new google.maps.Map(canvas, mapOptions);
+                
+                var marker = new google.maps.Marker({
+                    position: mapCenter,
+                    animation: google.maps.Animation.DROP
+                });
+                marker.setMap(map);
+                
+                window.setTimeout(function() {
+                    marker.setAnimation(google.maps.Animation.BOUNCE);
+                },1000);
+                
+                marker.addListener('click', function() {
+                    if(map.getZoom() == "13") {
+                        map.setZoom(18);
+                        marker.setAnimation(null);
+                    }
+                    else {
+                        map.setZoom(13);
+                        marker.setAnimation(google.maps.Animation.BOUNCE);
+                    }
+                    map.setCenter(marker.getPosition());
+                });
+            }
+        </script>
+        <script>
+            $(document).ready(function() {
+                $("#more").click(function() {
+                    $("#ideology").animate({
+                        'height' : '700px'
+                    },200);
+                    
+                    setTimeout(function() {
+                        $("#ideology").css({
+                        'height' : 'auto'
+                        });
+                    },250);
+                    
+                    $(this).css({
+                        'display' : 'none'
+                    });
+                });
+            })
         </script>
         
         <link rel="stylesheet" type="text/css" href="css/style.css"/>
-        <link rel="stylesheet" type="text/css" href="css/index-style.css"/>
+        <link rel="stylesheet" type="text/css" href="css/about-style.css"/>
     </head>
     <body id="aboutPage" data-spy="scroll" data-target=".navbar" data-offset="80">
         <!--     Navigation Bar     -->
@@ -46,12 +98,129 @@
                         <li><a href="join.html">JOIN THE MOVEMENT</a></li>
                         <li><a href="index.html#donate">WAYS TO HELP</a></li>
                         <li><a href="gallery.html">GALLERY</a></li>
-                        <li><a href="about.html">ABOUT</a></li>
+                        <li><a href="#aboutPage" class="slide-section">INFO</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         
         <!--     Navigation Bar Ends     -->
+        
+        <div id="about-content">
+            <div id="header-outer">
+                <div id="about-header">
+                    <h1 class="pink-text">Vijay Social Welfare Society</h1>
+                    <h2 class="navy-text">Let's do good!</h2>
+                </div>
+            </div>
+            
+            <div id="about-body">
+                <div id="aboutus" class="box">
+                    <h1 class="body-title">About Us</h1>
+                    <img src="img/website/vijay-social-welfare-society-shri-vijay-shankar-tare.png" class="img img-circle"/>
+                    <h3>
+                        VIJAY SOCIAL WELFARE SOCIETY was registered on January, 2017 in the name of late Shri Vijay Shankar Tare who selflessly helped others throughout his life.
+                    <h3>
+                        It is a nonprofit organization that not only serves mother earth but also unprivileged sections of the society. Through awareness, development, relief and advocacy, we strive to dedicate our resources &amp; devote our time &amp; beliefs to impact as many lives as we can in contexts of environment, health, education &amp; vocation.
+                    </h3>
+                    <div class="clear"></div>
+                </div>
+                
+                <div id="director" class="box animate">
+                    <h1 class="body-title">Director's Vision</h1>
+                    <img src="img/website/tilotamma-vinita-tare.jpeg" class="img img-circle"/>
+                    <h3>
+                        Our director, Tilotamma, is a beacon of compassion and faith, and has a resonating inner strength that is unmatchable. She is a hardworking and dedicated person who has always put in best efforts to create possibilities and opportunities for the deprived section of the society. Her vision is to transform the lives of underprivileged children and their future generations by promising them a productive future.
+                    </h3>
+                    <div class="clear"></div>
+                </div>
+                
+                <div id="ideology" class="box animate">
+                    <h1 class="body-title">Our Ideology</h1>
+                    <h3>
+                        Vijay Social Welfare Society aims to educate underprivileged children for life and develop in them a strong sense of responsibility and commitment towards the community. Our objective is to enable and empower children to clearly understand their roles and responsibilities in society. The NGO aims to equip underprivileged children with the necessary skills and abilities for career and educational advancement as well as motivate them to take an active role as leaders in their communities.
+                    </h3>
+                    <h3>
+                        A large part of Indian population are children forced into child labour through activities such as rag picking. At a major dumpsite on the outskirts of cities numerous young hands scavenging through urban litter can be found whereas they must ideally be holding pencils in a hygienic and empowering environment.
+                    </h3>
+                    <h3>
+                        Vijay Social Welfare Society, a nongovernmental organization devoted towards working for the benefit of underprivileged children among other issues, aims to send every child to school to train them in basic life skills, democratic values and learning competencies.
+                    </h3>
+                    <h3>
+                        Vijay Social Welfare Society is a dream! A dream set in the belief that if given the right opportunity, every child can flourish and a belief in education being a social emancipation tool that can overcome barriers of our society. It is a dream to spread the gift of education to the millions of children who languish without proper education. Due to the efforts of Vijay Social Welfare Society, 25 children got admission in private school with the help of sponsors.
+                    </h3>
+                    <h3>
+                        Our team also runs literacy programmes which advocate making literate adult learners and impart moral values, tips on health &amp; hygiene, basic etiquettes and English conversational skills, in its bid to wipe out the pall of illiteracy from the country.
+                    </h3>
+                    <h3>
+                        We request our sponsors and volunteers to step forward to bring a change in the lives of these children. A small effort by you can break a child free from the chains of child labour and rightfully practice his/her right to education.
+                    </h3>
+                    <h3 class="pink-text">
+                        LET'S DO GOOD!
+                    </h3>
+                    <div id="more">
+                        <i class="glyphicon glyphicon-menu-down"></i>
+                    </div>
+                </div>
+                
+                <div id="contact" class="box animate">
+                    <h1 class="body-title">Contact Us</h1>
+                    <div id="contact-body">
+                        <div class="body-half" id="contact-card">
+                            <div id="address" class="contact-content">
+                                <i class="glyphicon glyphicon-home"></i>
+                                <div>
+                                    B-57 LIG Colony <br>
+                                    RSS Nagar <br>
+                                    Indore (M.P.)
+                                </div>
+                            </div>
+                            <div id="email" class="contact-content">
+                                <i class="glyphicon glyphicon-envelope"></i>
+                                <div>
+                                    <br>
+                                    contactvijay.2017@gmail.com
+                                </div>
+                            </div>
+                            <div id="phone" class="contact-content">
+                                <i class="glyphicon glyphicon-earphone"></i>
+                                <div>
+                                    +91 9300774806 <br>
+                                    +91 9303229658
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="body-half" id="location">
+                        </div>
+                        
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            
+        <script type="text/javascript">
+            $(document).ready(function() {
+                $(window).scroll(function() {
+                    var screenTop = $(window).scrollTop();
+                    var screenBottom = screenTop + $(window).height();
+                    
+                    $("#about-body .animate").each(function() {
+                        var eleTop = $(this).offset().top;
+                        var trigger = eleTop + 150;
+                        
+                        if(screenBottom > trigger) {
+                            $(this).addClass('bringLeft');
+                        }
+                        else {
+                            $(this).removeClass('bringLeft');
+                        }
+                    });
+                });
+            });
+        </script>
+            
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC2FM-ONUlyCXsxxIGuWf92u3uM2wilg7U&callback=addMap"></script>
     </body>
 </html>

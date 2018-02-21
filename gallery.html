@@ -24,6 +24,25 @@
                 x.classList.toggle("change");
             }
             
+            function showImages(evt, proName) {
+                var i, tabcontent, tablinks;
+                
+                tabcontent = document.getElementsByClassName('tab-content');
+                
+                for(i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                
+                tablinks = document.getElementsByClassName("tablinks");
+                
+                for(i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                
+                document.getElementById(proName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            
             lightbox.option({
                 'fadeDuration':200,
                 'imageFadeDuration':200,
@@ -71,29 +90,30 @@
         <h1 class="text-center pink-text">Memories</h1>
 
         <div class="container-fluid" id="galleryPage-images">
-           
-            <div class="image-container">
-                <div class="header">
-                    <h1>Career Counselling Seminar</h1>
-                </div>
-                <div id="counselling-images">
-                </div>
-                <div class="clear"></div>
-                <div class="button">
-                    <button type="button" class="extension">View More</button>
-                </div>
+            
+            <div class="tabs">
+                <button id="defaultOpen" class="tablinks" onclick="showImages(event, 'Counselling')">Career Counselling</button>
+                <button class="tablinks" onclick="showImages(event, 'Donation')">Donation Drive</button>
             </div>
             
-            <div class="image-container">
-                <div class="header">
-                    <h1>Donation Drive</h1>
+            <div id="Counselling" class="tab-content">
+                
+                <div id="counselling-images">
+                    
                 </div>
-                <div id="donation-images"></div>
+                
                 <div class="clear"></div>
-                <div class="button">
-                    <button type="button" class="extension">View More</button>
-                </div>
             </div>
+            
+            <div id="Donation" class="tab-content">
+                
+                <div id="donation-images">
+                    
+                </div>
+                
+                <div class="clear"></div>
+            </div>
+            
         </div>
         
         <footer class="container-fluid navy">
@@ -115,12 +135,12 @@
             
             $(document).ready(function() {
                 counsellingUrls.forEach(function(ele) {
-                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='Counselling'><div class='image-overlay'></div><img data-src='img/counselling/" + ele + "'/></a></div>";
+                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='Counselling'><div class='image-overlay'></div><img src='img/counselling/" + ele + "'/></a></div>";
                     $("#counselling-images").append(url);
                 });
                 
                 donationUrls.forEach(function(ele) {
-                    var url = "<div class='image-wrap'><a href='img/donation/" + ele + "' data-lightbox='Donation'><div class='image-overlay'></div><img data-src='img/donation/" + ele + "'/></a></div>";
+                    var url = "<div class='image-wrap'><a href='img/donation/" + ele + "' data-lightbox='Donation'><div class='image-overlay'></div><img src='img/donation/" + ele + "'/></a></div>";
                     $("#donation-images").append(url);
                 })
                 
@@ -131,9 +151,6 @@
                         scrollTop: ($(linkHref).offset().top - 80)
                     },1000);
                 });
-                
-                
-                $()
             })
         </script>
         <script type="text/javascript" src="js/jquery.lazyloadxt.js"></script>
