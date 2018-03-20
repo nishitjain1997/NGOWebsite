@@ -88,32 +88,128 @@
         <!--     Navigation Bar Ends     -->
            
         <h1 class="text-center pink-text">Memories</h1>
-
-        <div class="container-fluid" id="galleryPage-images">
-            
-            <div class="tabs">
-                <button id="defaultOpen" class="tablinks" onclick="showImages(event, 'Counselling')">Career Counselling</button>
-                <button class="tablinks" onclick="showImages(event, 'Donation')">Donation Drive</button>
+        
+        <div class="photos-index" id="photos">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#counselling" class="slide-section">
+                            <img src="img/website/counselling-thumb.JPG" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Counselling</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#donation" class="slide-section">
+                            <img src="img/website/donation-thumb.jpeg" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Donation</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#newspaper" class="slide-section">
+                            <img src="img/website/newspaper-thumb.jpg" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Newspaper <br>Clippings</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="clearfix visible-lg visible-md"></div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#prithvi" class="slide-section">
+                            <img src="img/website/plantation-thumb.jpg" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Prithvi <br> (Plantation Drive)</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#sankalp" class="slide-section">
+                            <img src="img/website/sankalp-thumb.jpg" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Sankalp</h2>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="col-lg-4 col-md-4 col-sm-6 col-xs-6 index-item">
+                        <a href="#uday">
+                            <img src="img/website/uday-thumb.jpg" class="img-responsive"/>
+                            <div class="item-overlay"></div>
+                            <div class="item-caption">
+                                <h2>Uday</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="photo-content">
+            <div class="content-item" id="counselling">
+                <div class="content-header">
+                    <h2>Counselling</h2>
+                </div>
+                <div class="content-images">
+                </div>
             </div>
             
-            <div id="Counselling" class="tab-content">
-                
-                <div id="counselling-images">
+            <div class="content-item" id="donation">
+                <div class="content-header">
+                    <h2>Donation</h2>
+                </div>
+                <div class="content-images">
                     
                 </div>
-                
-                <div class="clear"></div>
             </div>
             
-            <div id="Donation" class="tab-content">
-                
-                <div id="donation-images">
+            <div class="content-item" id="newspaper">
+                <div class="content-header">
+                    <h2>Newspaper Clippings</h2>
+                </div>
+                <div class="content-images">
                     
                 </div>
-                
-                <div class="clear"></div>
             </div>
             
+            <div class="content-item" id="prithvi">
+                <div class="content-header">
+                    <h2>Prithvi (Plantation Drive)</h2>
+                </div>
+                <div class="content-images">
+                    
+                </div>
+            </div>
+            
+            <div class="content-item" id="sankalp">
+                <div class="content-header">
+                    <h2>Sankalp</h2>
+                </div>
+                <div class="content-images">
+                    
+                </div>
+            </div>
+            
+            <div class="content-item" id="uday">
+                <div class="content-header">
+                    <h2>Uday</h2>
+                </div>
+                <div class="content-images">
+                    
+                </div>
+            </div>
         </div>
         
         <footer class="container-fluid navy">
@@ -125,31 +221,58 @@
             var counsellingUrls;
             var donationUrls;
             
-            $.get('counselling.txt',function(data) {
+            $.get('counselling.txt', function(data) {
                 counsellingUrls = data.split('\n');
+                
+                counsellingUrls.forEach(function(ele) {
+                    var url = "<a href='img/counselling/" + ele + "' data-lightbox='Counselling'><div class='image-overlay'></div><img src='img/counselling/" + ele + "'/></a>";
+                    $("#counselling .content-images").append(url);
+                });
             });
             
-            $.get('donation.txt',function(data) {
+            $.get('donation.txt', function(data) {
                 donationUrls = data.split('\n');
+                
+                donationUrls.forEach(function(ele) {
+                    var url = "<a href='img/donation/" + ele + "' data-lightbox='Donation'><div class='image-overlay'></div><img src='img/donation/" + ele + "'/></a>";
+                    $("#donation .content-images").append(url);
+                });
+            });
+            
+            $.get('newspaper.txt', function(data) {
+                newspaperUrls = data.split('\n');
+                
+                newspaperUrls.forEach(function(ele) {
+                    var url = "<a href='img/newspaper/"+ ele + "' data-lightbox='Newspaper'><div class='image-overlay'></div><img src='img/newspaper/" + ele + "'/></a>";
+                    $("#newspaper .content-images").append(url);
+                });
+            });
+            
+            $.get('prithvi.txt', function(data) {
+                prithviUrls = data.split('\n');
+                
+                prithviUrls.forEach(function(ele) {
+                    var url = "<a href='img/prithvi/" + ele + "' data-lightbox='Prithvi'><div class='image-overlay'></div><img src='img/prithvi/" + ele + "'/></a>";
+                    $("#prithvi .content-images").append(url);
+                })
+            });
+            
+            $.get('sankalp.txt', function(data) {
+                sankalpUrls = data.split('\n');
+                
+                sankalpUrls.forEach(function(ele) {
+                    var url = "<a href='img/sankalp/" + ele + "' data-lightbox='Sankalp'><div class='image-overlay'></div><img src='img/sankalp/" + ele + "'/></a>";
+                    $("#sankalp .content-images").append(url);
+                })
             })
             
             $(document).ready(function() {
-                counsellingUrls.forEach(function(ele) {
-                    var url = "<div class='image-wrap'><a href='img/counselling/" + ele + "' data-lightbox='Counselling'><div class='image-overlay'></div><img src='img/counselling/" + ele + "'/></a></div>";
-                    $("#counselling-images").append(url);
-                });
-                
-                donationUrls.forEach(function(ele) {
-                    var url = "<div class='image-wrap'><a href='img/donation/" + ele + "' data-lightbox='Donation'><div class='image-overlay'></div><img src='img/donation/" + ele + "'/></a></div>";
-                    $("#donation-images").append(url);
-                })
-                
                 $(".slide-section").click(function(e){
                     e.preventDefault();
                     var linkHref = $(this).attr('href');
                     $('html,body').animate({
                         scrollTop: ($(linkHref).offset().top - 80)
-                    },1000);
+                    },800);
                 });
             })
         </script>

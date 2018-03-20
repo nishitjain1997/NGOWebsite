@@ -9,12 +9,14 @@
 
 body {
     overflow-x: hidden;
+    font-size: 16px;
 }
 
 .header {
     padding-top: 20px;
     padding-bottom: 20px;
 }
+
 /*    Banner     */
 #banner {
     background-image: url(../img/website/vijay-social-welfare-society-children-studying.jpg);
@@ -48,270 +50,175 @@ body {
 /*    Banner ends     */
 
 /*    About     */
-
 #about {
-    width: 100%;
-    padding-bottom: 40px;
-    overflow: hidden;
+    padding: 40px 0px;
 }
 
-#about #about-header {
-    padding-top: 30px;
-    font-size: 150%;
+#about #about-header h1 {
+    font-size: 250%;
 }
 
-#about .row {
-    border: 1px solid #E5E5E5;
-    width: 80%;
-    margin: auto;
-    margin-top: 20px;
-    padding-bottom: 20px;
-    position: relative;
-    left: 200px;
-    opacity: 0;
-    background-color: #E5E5E5;
-    box-shadow: 2px 2px 2px grey;
-    transition: 0.2s linear;
-}
-
-#about .row.bringLeft {
-    left: 0px;
-    opacity: 1;
+#about-header h2 {
+    font-size: 230%;
 }
 
 #about .row h1 {
-    color: #EE048C;
-}
-
-#about .row .col-lg-7 h2 {
-    font-family: 'Yanone Kaffeesatz';
     font-size: 200%;
-    line-height: 35px;
-    margin-right: 20px;
+    color: #0F1626;
 }
 
-#about .row .image-wrap {
-    border: 2px solid black;
-    height: 25vw;
-    width: 23vw;
-    overflow: hidden;
+#about .row h2 {
+    font-size: 180%;
+}
+
+#about .box {
+    background-color: #E5E5E5;
+    width: 90%;
     margin: auto;
+    padding: 20px 0px 40px 0px;
+    margin-bottom: 40px;
+    box-shadow: 0px 20px 10px -10px grey;
 }
-
-#about .row .image-wrap img {
-    height: 100%;
-    width: 100%;
-}
-/*    About ends     */
+/*    // About     */
 
 /*    Philosophy     */
 #philosophy {
-    width: 100%;
-    height: auto;
+    height: 500px;
 }
 
-#philosophy #myCarousel {
-    height: auto;
-    padding-bottom: 70px;
+.item {
+    background-color: black;
+    height: 410px;
 }
 
-#philosophy #myCarousel h2 {
-    color: #EE048C;
-}
-
-#philosophy #myCarousel h3 {
-    padding: 0px 30px;
-    width: 80%;
-    margin: auto;
-}
-
-#philosophy #myCarousel .carousel-indicators li {
-    border: 2px solid #0F1626;
-}
-/*    Philosophy ends     */
-
-/*    Photos     */
-#photos .container {
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 30px;
-    padding-bottom: 30px;
-    width: 85%;
-}
-
-#photos .container .image-wrap {
-    height: 270px;
-    overflow: hidden;
-    margin-top: 10px;
-    margin-left: 10px;
-}
-
-#photos .container .image-wrap img {
-    height: 100%;
-    transform: scale(1);
-    transition: 0.2s;
-}
-
-#photos .container .image-wrap img:hover {
-    transform: scale(1.1);
-}
-
-#photos .row a {
-    border: 2px solid #EE048C;
-    display: block;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    color: #EE048C;
-    background-color: #E5E5E5;
-    transition: 0.3s;
-}
-
-#photos .row a:hover {
-    text-decoration: none;
-    background-color: #EE048C;
+.item h2 {
     color: #E5E5E5;
 }
-/*    Photos end     */
 
-/*    Work     */
-#work .container {
+.item h2, .item h3 {
+    width: 80%;
+    margin: auto;
+    text-shadow: 
+}
+
+.item img {
     width: 100%;
-    padding: 40px 0px 20px 0px;
+    -webkit-filter: blur(3px);
+    filter: blur(3px);
+    z-index: -10;
+}
+/*    // Philosophy     */
+
+/*    Gallery     */
+#photos .container {
+    padding: 50px 0px;
 }
 
-#work .container .well {
-    border: 3px solid #EE048C;
-    color: #EE048C;
-    transition: 0.2s ease-in-out;
-    font-size: 20px;
+#photos .container img {
+    margin: 20px 0px;
+    border: 2px solid grey;
+    box-shadow: 0px 20px 10px -10px grey;
+    transition: 0.15s ease-in-out;
+    transform: scale(1);
+}
+
+#photos .container img:hover {
+    box-shadow: 0px 20px 10px -15px grey;
+    transform: scale(0.98);
+}
+
+#photos .well {
+    border: 5px solid #EE048C;
     border-radius: 10px;
-    overflow: hidden;
+    color: #EE048C;
+    font-size: 120%;
+    height: 80px;
+    transition: 0.2s ease-in;
+    position: relative;
+    z-index: 2;
 }
 
-#work .container .well:hover {
-    color: #F7F7F5;
+#photos .well::after {
+    content: '';
+    height: 100%;
+    width: 0%;
     background-color: #EE048C;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.2s ease-in;
 }
 
-#work .container .row a:hover {
+#photos a:hover .well::after {
+    width: 100%;
+}
+
+#photos a h2 {
+    color: #EE048C;
+    position: absolute;
+    top: 5%;
+    left: 30%;
+    z-index: 100;
+    font-size: 200%;
+    transition: 0.2s ease-in;
+}
+
+#photos a:hover h2 {
+    color: #F7F7F5;
+}
+
+#photos a:hover {
     text-decoration: none;
 }
+/*    // Gallery     */
 
-#work .container .well span {
+/*    Work     */
+#work .row {
+    padding: 40px 0px;
     position: relative;
-    left: 0px;
-    transition: left 0.3s ease-in-out;
 }
 
-#work .container .well:hover span {
-    left: 20px;
-}
-/*    Work ends     */
-
-/*    Donate     */
-#donate {
-    padding-bottom: 30px;
+#work .well {
+    border: 5px solid #EE048C;
+    border-radius: 10px;
+    height: 80px;
+    width: 100%;
+    position: relative;
 }
 
-#donate .quote {
-    padding: 30px 0px;
+#work .well::after {
+    content: '';
+    height: 100%;
+    width: 0%;
+    background-color: #EE048C;
+    transition: width 0.2s ease-in;
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
-#donate .quote h1 {
-    width: 80%;
-    margin: auto;
-    font-family: 'Merienda';
+#work a:hover .well::after {
+    width: 100%;
 }
 
-#donate .quote h2 {
-    width: 80%;
-    margin: auto;
-    font-size: 160%;
-    font-family: 'Merienda';
+#work h2 {
+    position: absolute;
+    top: 5px;
+    left: 28%;
+    color: #EE048C;
+    transition: 0.2s ease-in;
 }
 
-#donate #donate-content h1 {
-    font-family: 'Yanone Kaffeesatz';
-    font-size: 200%;
+#work a:hover h2 {
+    color: #F7F7F5;
 }
 
-#donate .row h2 {
-    font-family: 'Yanone Kaffeesatz';
-    font-size: 150%;
+#work a h2 span {
+    transform: translate(0px, 0px);
+    transition: transform 0.2s ease-in;
 }
 
-#donate .row h2 li {
-    list-style: none;
-    padding: 10px 10px;
-    transition: 0.3s;
+#work a:hover h2 span {
+    transform: translate(10px, 0px);
 }
-
-#donate .row h2 li:hover {
-    background-color: rgba(0,0,0,.2);
-}
-/*    Donate ends     */
-
-/*    Footer     */
-footer {
-    height: 50%;
-}
-/*    Footer ends     */
-
-/*    Media queries     */
-@media only screen and (max-width: 768px) {
-    #banner #banner-inner h1 {
-        font-size: 40px;
-    }
-
-    #about .row {
-        width: 100%;
-    }
-
-    #about .row .col-lg-7 h2 {
-        font-size: 150%;
-        line-height: 30px;
-        margin-right: 20px;
-    }
-
-    #about .row .image-wrap {
-        height: 70vw;
-        width: 70vw;
-    }
-
-    #philosophy #myCarousel h3 {
-        font-size: 120%;
-    }
-
-    #photos .container .image-wrap {
-        height: auto;
-        width: 100%;
-    }
-
-    #photos .container .image-wrap img {
-        height: auto;
-        width: 100%;
-    }
-
-    #photos .row a {
-        height: 70px;
-        width: 140px;
-    }
-
-    #work .container .well {
-        font-size: 110%;
-    }
-    
-    #donate .row {
-        padding: 0px 10px 0px 20px;
-    }
-    
-    #donate .quote h1, #donate .quote h2 {
-        font-size: 140%;
-    }
-    
-    #donate #donate-content h1 {
-        padding: 0px 10px;
-        font-size: 190%;
-    }
-}
+/*    // Work     */
